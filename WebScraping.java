@@ -23,8 +23,8 @@ public class WebScraping {
                     System.out.println(line);
                 }
             }*/
-            Document doc;
-            doc = Jsoup.connect("http://weather.yahoo.com/").get();
+
+            Document doc = Jsoup.connect("http://weather.yahoo.com/").get();
 
         	// get page title
         	String title = doc.title();
@@ -33,7 +33,6 @@ public class WebScraping {
         	// get all links
         	Elements links = doc.select("a[href]");
         	for (Element link : links) {
-
         		// get the value from href attribute
         		System.out.println("\nlink : " + link.attr("href"));
         		System.out.println("text : " + link.text());
